@@ -1,0 +1,110 @@
+%button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.section-b{
+    min-height: 100vh;
+    @extend %flex-stack;
+    justify-content: space-between;
+    .container{
+        @extend %container;
+        .titles{
+            @extend %flex-stack;
+            justify-content: space-between;
+            h1{
+                text-transform: uppercase;
+                font-family: $josefin-sans;
+                font-weight: 300;
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            button{
+                @extend %button;
+                border: 2px solid #000;
+                padding: 0.4rem 2rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                transition: 0.3s ease all;
+                border-radius: 2px;
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            div{
+                margin: 1rem;
+                height: 350px;
+                width: 200px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: #fff;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    transition: 0.3s ease all;
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(0,0,0,0.2);
+                }
+                &:hover::after{
+                    background-color: rgba(255, 255, 255, 0.486);
+                    color: #000;
+                }
+                *{
+                    z-index: 1;
+                }
+                h2{
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    padding: 2rem;
+                    margin: 0;
+                    font-family: $josefin-sans;
+                    font-weight: 200;
+                }
+
+                &:nth-of-type(1){
+                    background-image: url('../images/desktop/image-deep-earth.jpg');
+                }
+                &:nth-of-type(2){
+                    background-image: url('../images/desktop/image-night-arcade.jpg');
+                }
+                &:nth-of-type(3){
+                    background-image: url('../images/desktop/image-soccer-team.jpg');
+                }
+                &:nth-of-type(4){
+                    background-image: url('../images/desktop/image-grid.jpg');
+                }
+                &:nth-of-type(5){
+                    background-image: url('../images/desktop/image-from-above.jpg');
+                }
+                &:nth-of-type(6){
+                    background-image: url('../images/desktop/image-pocket-borealis.jpg');
+                }
+                &:nth-of-type(7){
+                    background-image: url('../images/desktop/image-curiosity.jpg');
+                }
+                &:nth-of-type(8){
+                    background-image: url('../images/desktop/image-fisheye.jpg');
+                }
+            }
+        }
+    }
+}
